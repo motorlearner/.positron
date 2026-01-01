@@ -4,6 +4,8 @@
     "files.associations": {
         "renv.lock": "json"
     },
+    
+    "files.autoSave": "onFocusChange",
 
     // APPEARANCE -------------------------------------------------------------
 
@@ -16,9 +18,4 @@
     "editor.fontVariations": false,
     "editor.semanticHighlighting.enabled": true,
     "explorer.confirmDelete": false,
-    
-    
-    
-    
-    
 }

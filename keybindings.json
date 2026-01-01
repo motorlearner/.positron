@@ -71,12 +71,12 @@
     },
     // insert line above/below
     {
-        "key": "shift+alt+up",
+        "key": "alt+up",
         "command": "editor.action.insertLineBefore",
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "shift+alt+down",
+        "key": "alt+down",
         "command": "editor.action.insertLineAfter",
         "when": "editorTextFocus && !editorReadonly"
     },
@@ -321,6 +321,11 @@
     {
         "key": "alt+down",
         "command": "-editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
     },
 ]
