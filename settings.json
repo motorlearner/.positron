@@ -1,14 +1,11 @@
 {
     // FILES ------------------------------------------------------------------
-
     "files.associations": {
         "renv.lock": "json"
     },
-    
     "files.autoSave": "onFocusChange",
-
+    "explorer.confirmDelete": false,
     // APPEARANCE -------------------------------------------------------------
-
     "workbench.colorTheme": "Monokai Vibrant",
     "workbench.iconTheme": "material-icon-theme",
     "window.zoomLevel": -0.5,
@@ -17,5 +14,4 @@
     "editor.fontLigatures": true,
     "editor.fontVariations": false,
     "editor.semanticHighlighting.enabled": true,
-    "explorer.confirmDelete": false,
 }

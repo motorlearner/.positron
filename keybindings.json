@@ -1,7 +1,5 @@
 [
-    
-    // NAV --------------------------------------------------------------------
-
+    // LAYOUT  ----------------------------------------------------------------
     // focus tab
     {
         "key": "ctrl+alt+right",
@@ -46,24 +44,71 @@
     {
         "key": "ctrl+shift+alt+[",
         "command": "workbench.action.moveActiveEditorGroupLeft"
-    },    
+    },
     // toggle maximize group
     {
         "key": "ctrl+alt+L",
         "command": "workbench.action.toggleMaximizeEditorGroup"
     },
-
-    // RUN --------------------------------------------------------------------
-    
+    // change group width
+    {
+        "key": "ctrl+alt+-",
+        "command": "workbench.action.decreaseViewWidth"
+    },
+    {
+        "key": "ctrl+alt+=",
+        "command": "workbench.action.increaseViewWidth"
+    },
+    // toggle terminal, console
+    {
+        "key": "ctrl+alt+.",
+        "command": "workbench.action.positronConsole.open",
+    },
+    {
+        "key": "ctrl+alt+/",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    // ACTION -----------------------------------------------------------------
     // run line
     {
         "key": "cmd+enter",
         "command": "workbench.action.positronConsole.executeCode",
         "when": "editorTextFocus && !notebookEditorFocused && !positronNotebookCellEditorFocused"
     },
-
+    // format
+    {
+        "key": "cmd+d",
+        "command": "editor.action.formatSelection",
+        "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+d",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+        "key": "cmd+d",
+        "command": "editor.action.formatDocument.none",
+        "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+    },
+    // select
+    {
+        "key": "ctrl+shift+up",
+        "command": "editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "expandLineSelection",
+        "when": "textInputFocus"
+    },
     // EDITOR -------------------------------------------------------------------
-
     // delete line
     {
         "key": "cmd+shift+backspace",
@@ -82,14 +127,25 @@
     },
     // move line above/below
     {
+        "key": "cmd+up",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
         "key": "cmd+down",
         "command": "editor.action.moveLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
     },
+    // add cursor above/below
     {
-        "key": "cmd+up",
-        "command": "editor.action.moveLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
+        "key": "shift+alt+up",
+        "command": "editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
     },
     // copy line above/below
     {
@@ -108,9 +164,7 @@
         "command": "-editor.action.removeBrackets",
         "when": "editorTextFocus"
     },
-
     // LANG R -----------------------------------------------------------------
-
     // insert <-
     {
         "key": "shift+cmd+-",
@@ -139,10 +193,7 @@
         "command": "r.insertSection",
         "when": "editorLangId == 'r'"
     },
-    
-    
     // REMOVE CLUTTER ---------------------------------------------------------
-
     {
         "key": "ctrl+enter",
         "command": "-workbench.action.positronConsole.executeCode",
@@ -327,5 +378,79 @@
         "key": "shift+alt+down",
         "command": "-editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+cmd+right",
+        "command": "-editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "-editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+cmd+up",
+        "command": "-editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+cmd+down",
+        "command": "-editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "-editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "-editor.action.formatDocument.none",
+        "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+    },
+    {
+        "key": "cmd+k cmd+f",
+        "command": "-editor.action.formatSelection",
+        "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "-workbench.action.terminal.split",
+        "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "-workbench.action.splitEditor"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "-workbench.action.terminal.splitActiveTab",
+        "when": "terminalProcessSupported && terminalTabsFocus"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "-editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+cmd+left",
+        "command": "-editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+left",
+        "command": "-editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+s",
+        "command": "-issue.createIssueFromFile",
+        "when": "!issues.creatingFromFile && resourceScheme == 'newIssue' && config.files.autoSave != 'off'"
     },
 ]
