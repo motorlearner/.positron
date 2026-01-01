@@ -1,0 +1,23 @@
+{
+    // FILES ------------------------------------------------------------------
+
+    "files.associations": {
+        "renv.lock": "json"
+    },
+
+    // APPEARANCE -------------------------------------------------------------
+
+    "workbench.colorTheme": "Monokai Vibrant",
+    "workbench.iconTheme": "material-icon-theme",
+    "window.zoomLevel": -0.5,
+    "editor.fontSize": 11,
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontLigatures": true,
+    "editor.fontVariations": false,
+    "editor.semanticHighlighting.enabled": true,
+    
+    
+    
+    
+    
+}
